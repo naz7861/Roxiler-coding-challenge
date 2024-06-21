@@ -1,0 +1,9 @@
+{
+  "transactionId": "string",
+  "title": "string",
+  "description": "string",
+  "price": "number",
+  "category": "string",
+  "dateOfSale": "ISODate",
+  "sold": "boolean"
+}
