@@ -7,7 +7,7 @@ const BarChart = ({ month }) => {
 
   useEffect(() => {
     const fetchData = async () => {
-      const response = await axios.get(`/barchart`, { params: { month } });
+      const response = await axios.get('/barchart', { params: { month } });
       setData(response.data);
     };
     fetchData();
@@ -28,3 +28,4 @@ const BarChart = ({ month }) => {
 };
 
 export default BarChart;
+
