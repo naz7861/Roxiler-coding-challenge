@@ -6,7 +6,7 @@ const Statistics = ({ month }) => {
 
   useEffect(() => {
     const fetchStatistics = async () => {
-      const response = await axios.get(`/statistics`, { params: { month } });
+      const response = await axios.get('/statistics', { params: { month } });
       setStatistics(response.data);
     };
     fetchStatistics();
