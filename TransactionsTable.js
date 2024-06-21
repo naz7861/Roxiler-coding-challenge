@@ -8,7 +8,7 @@ const TransactionsTable = ({ month, search, page, setPage }) => {
 
   useEffect(() => {
     const fetchTransactions = async () => {
-      const response = await axios.get(`/transactions`, {
+      const response = await axios.get('/transactions', {
         params: { month, search, page, per_page: perPage },
       });
       setTransactions(response.data.transactions);
@@ -31,7 +31,7 @@ const TransactionsTable = ({ month, search, page, setPage }) => {
           </tr>
         </thead>
         <tbody>
-          {transactions.map(transaction => (
+          {transactions.map((transaction) => (
             <tr key={transaction.transactionId}>
               <td>{transaction.transactionId}</td>
               <td>{transaction.title}</td>
@@ -44,8 +44,12 @@ const TransactionsTable = ({ month, search, page, setPage }) => {
         </tbody>
       </table>
       <div>
-        <button onClick={() => setPage(page - 1)} disabled={page === 1}>Previous</button>
-        <button onClick={() => setPage(page + 1)} disabled={page * perPage >= total}>Next</button>
+        <button onClick={() => setPage(page - 1)} disabled={page === 1}>
+          Previous
+        </button>
+        <button onClick={() => setPage(page + 1)} disabled={page * perPage >= total}>
+          Next
+        </button>
       </div>
     </div>
   );
